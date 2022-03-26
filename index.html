@@ -16,7 +16,7 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#donate" class="icon solid fa-dumpster"><span>Donate</span></a>
+						<a href="#donate" class="icon solid fa-gift"><span>Donate</span></a>
 						<a href="#work" class="icon solid fa-folder"><span>Catalogue</span></a>
 						<a href="#info" class="icon solid fa-info"><span>Info</span></a>
 						<a href="https://green.nd.edu/get-involved/waste/old2gold/" class="icon solid fa-recycle"><span>GreenND</span></a>
@@ -28,13 +28,10 @@
 						<!-- Me -->
 							<article id="home" class="panel intro">
 								<header>
-									<h1>part::out</h1>
-									<p>connecting tech with the local community</p>
+									<h1><center>part::out</center></h1>
+									<p><center>Salvaging E-Waste from the college move-out process<br>
+									while also compiling computer setups for the local community</center></p>
 								</header>
-								<a href="#donate" class="jumplink pic">
-									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-									<img src="images/me.jpg" alt="" />
-								</a>
 							</article>
 
 							<!-- Donate -->
@@ -45,20 +42,30 @@
 									<form action="#thankyou" method="post">
 										<div>
 											<div class="row">
-												<div class="col-6 col-12-medium">
+												<div class="col-6 col-12 col-18-medium">
 													<input type="text" name="name" placeholder="Name" />
 												</div>
 												<div class="col-6 col-12-medium">
 													<input type="text" name="email" placeholder="Email" />
 												</div>
 												<div class="col-6 col-12-medium">
-													<input type="text" name="item" placeholder="Item" />
+													<input type="text" name="dorm" placeholder="Dorm" />
 												</div>
 												<div class="col-6 col-12-medium">
-													<input type="text" name="type" placeholder="Type" />
+													<input type="text" name="item" placeholder="Item (eg. Dell Laptop)" />
+												</div>
+												<div class="col-6 col-12-medium">
+													<select id="types" name="Type">
+														<option value="" disabled selected hidden>Type</option>
+  													<option value="desktop">Desktop</option>
+  													<option value="monitor">Monitor</option>
+  													<option value="mouse">Mouse</option>
+  													<option value="keyboard">Keyboard</option>
+														<option value="misc.">Misc.</option>
+													</select>
 												</div>
 												<div class="col-12">
-													<textarea name="notes" placeholder="Notes" rows="6"></textarea>
+													<textarea name="notes" placeholder="Notes (eg. Cracked Screen, Broken, etc.)" rows="6"></textarea>
 												</div>
 												<div class="col-12">
 													<input type="submit" value="Submit" />
@@ -70,7 +77,7 @@
 
 							<article id="thankyou" class="panel">
 								<header>
-									<h2>Thank You!</h2>
+									<h2><center>Thank You!</center></h2>
 								</header>
 							</article>
 
@@ -83,29 +90,29 @@
 									<div class="row">
 										<div class="col-4 col-6-medium col-12-small">
 											<blockquote>
-												<u>Build #1</u><br>
-												Desktop: <br>
-												Monitor:<br>
-												Mouse:<br>
-												Keyboard:<br>
+												<u><center><b>Build #1</b></center></u><br>
+												<b>Desktop: </b><br>
+												<b>Monitor:</b><br>
+												<b>Mouse:</b><br>
+												<b>Keyboard:</b><br>
 											</blockquote>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
 											<blockquote>
-												<u>Build #2</u><br>
-												Desktop:<br>
-												Monitor:<br>
-												Mouse:<br>
-												Keyboard:<br>
+												<u><center><b>Build #2</b></center></u><br>
+												<b>Desktop: </b><br>
+												<b>Monitor:</b><br>
+												<b>Mouse:</b><br>
+												<b>Keyboard:</b><br>
 											</blockquote>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
 											<blockquote>
-												<u>Build #3</u><br>
-												Desktop:<br>
-												Monitor:<br>
-												Mouse:<br>
-												Keyboard:<br>
+												<u><center><b>Build #3</b></center></u><br>
+												<b>Desktop: </b><br>
+												<b>Monitor:</b><br>
+												<b>Mouse:</b><br>
+												<b>Keyboard:</b><br>
 											</blockquote>
 										</div>
 									</div>
@@ -115,9 +122,9 @@
 								</header>
 								<table>
 									<tr>
-										<th>Name</th>
-										<th>Type</th>
-										<th>Notes</th>
+										<th><b>Name</b></th>
+										<th><b>Type</b></th>
+										<th><b>Notes</b></th>
 									</tr>
 									<tr>
 										<td>Lenovo Shitbox</td>
