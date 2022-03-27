@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
+#main.py
+#This program provides the ability to run the part::out web page whilst using python code for tools
+#Currently, it runs on the localhost - for a demonstration of the web page this is sufficient
+#2022 Hesburgh Hackathon
 
 import tornado.ioloop
 import tornado.web
 import json
 import os
-import random
 import re
 
 
@@ -13,6 +16,10 @@ def saveJson(dict):
     with open("sampleParts.json", "w") as datafile:
         json.dump(dict, datafile)
 
+#Builds lists of complete and semi complete computer builds
+#Each build is a monitor, desktop, keyboard, and mouse
+#Broken items are not listed in builds
+#Input is the overall dictionary, lists for builds, and a list for already used parts
 def compBuilder(theDict, buildList, theUsed):
     theDict = sorted(theDict.items(), key=lambda y: y[1]["type"])
     theDict = dict(theDict)
@@ -85,35 +92,10 @@ class MainHandler(tornado.web.RequestHandler):
         saveJson(theDict)
         makeOutput(theDict, theBuilds)
         
-        #compBuilder(theDict, theBuilds, theUsed)
-#<center>
-#<img src="https://www.tornadoweb.org/en/stable/_images/tornado.png">
-#</center>
-#''')
-        #for line in theDict:
-            #self.write(f'<center> {theDict[line]} </center>')
-        #if "newAddition" not in theDict:
-            #theDict["newAddition"] = "Testing"
-            #with open("theJson.txt", "w") as dataFile:
-                #json.dump(theDict, dataFile)
     def get(self):       
         self.render("sevIndex.html", dict=theDict, theBuilds=theBuilds, theUsed=theUsed)
 
-
-        
-'''
-def make_app():
-    return tornado.web.Application([
-        (r"/", MainHandler),
-    ])
-    
-class make_app(tornado.web.Application):
-    def __init__(self):
-        handlers = [
-                (r"/", MainHandler),
-                    ]
-        tornado.web.Application.__init__(self, handlers, **settings) '''
-
+ 
 if __name__ == "__main__":
 
     #first gets the dictionary from the json
@@ -130,12 +112,11 @@ if __name__ == "__main__":
     (r"/", MainHandler),
     (r"/(.*)", tornado.web.StaticFileHandler,
      dict(path=settings['static_path'])),
-], **settings)
+    ], **settings)
 
     #initialize the builds as empty
     theBuilds = []
     theUsed = []
-    theBroken = []
     for x in range(3):
         emptyDict = {}
         plainDict = {"item": " "}
@@ -146,7 +127,6 @@ if __name__ == "__main__":
         theBuilds.append(emptyDict)
 
     #Build computers
-    #makeBroken(theDict, theBroken)
     compBuilder(theDict, theBuilds, theUsed)
     makeOutput(theDict, theBuilds)
 
