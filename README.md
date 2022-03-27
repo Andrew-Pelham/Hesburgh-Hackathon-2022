@@ -5,6 +5,6 @@
 ##### This will create a basic json document for storage with a few example parts
 ##### Then chmod +x main.py
 ##### To view the web page, run ./main.py
-##### Then in a web browser go to localhost:9999
+##### Then in a web browser go to your localhost with port 9999
 ##### This should allow viewing of the web browser.
 ##### To stop hosting the page, ctrl-C in your terminal to end the program. 
