@@ -5,8 +5,8 @@
 		<title>part::out</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -133,11 +133,13 @@
 									</tr>
                                     {% for key in dict %}
                                     {% if dict[key]["item"] not in theUsed %}
+                                    {% if dict[key]["broken"] == False %}
 									<tr>
                                         <td>{{dict[key]["item"]}}</td>
                                         <td>{{dict[key]["type"]}}</td>
                                         <td>{{dict[key]["notes"]}}</td>
 									</tr>
+                                    {% end %}
                                     {% end %}
                                     {% end %}
 								</table>
@@ -152,7 +154,7 @@
 										<th><b>Notes</b></th>
 									</tr>
                                     {% for key in dict %}
-                                    {% if dict[key]["item"] not in theUsed %}
+                                    {% if dict[key]["broken"] == True %}
 									<tr>
                                         <td>{{dict[key]["item"]}}</td>
                                         <td>{{dict[key]["type"]}}</td>
