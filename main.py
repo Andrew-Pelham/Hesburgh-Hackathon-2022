@@ -60,7 +60,7 @@ def makeOutput(theDict, buildList):
 
 class MainHandler(tornado.web.RequestHandler):
     def post(self):
-        self.render("sevIndex.html", dict=theDict, theBuilds=theBuilds, theUsed=theUsed)
+        self.render("index.html", dict=theDict, theBuilds=theBuilds, theUsed=theUsed)
         
         #Gathers user entries to put in the dictionary
         theName = self.get_argument('name', '')
@@ -93,7 +93,7 @@ class MainHandler(tornado.web.RequestHandler):
         makeOutput(theDict, theBuilds)
         
     def get(self):       
-        self.render("sevIndex.html", dict=theDict, theBuilds=theBuilds, theUsed=theUsed)
+        self.render("index.html", dict=theDict, theBuilds=theBuilds, theUsed=theUsed)
 
  
 if __name__ == "__main__":
